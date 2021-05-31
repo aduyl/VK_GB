@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="1wm-h6-N4x">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-8v-NBm">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="810"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="810" id="o1u-gT-3Kd"/>
+                                        </constraints>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kG6-8v-NBm" secondAttribute="trailing" id="5zs-mB-uTb"/>
+                                    <constraint firstItem="kG6-8v-NBm" firstAttribute="top" secondItem="1wm-h6-N4x" secondAttribute="top" id="F7t-0W-LCG"/>
+                                    <constraint firstItem="kG6-8v-NBm" firstAttribute="centerX" secondItem="1wm-h6-N4x" secondAttribute="centerX" id="WE3-eb-JvM"/>
+                                    <constraint firstItem="kG6-8v-NBm" firstAttribute="leading" secondItem="1wm-h6-N4x" secondAttribute="leading" id="e6h-LX-l2q"/>
+                                    <constraint firstAttribute="bottom" secondItem="kG6-8v-NBm" secondAttribute="bottom" id="jea-YX-d5N"/>
+                                </constraints>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1wm-h6-N4x" secondAttribute="trailing" id="ACS-WJ-xRc"/>
+                            <constraint firstItem="1wm-h6-N4x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LOw-OJ-NKW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1wm-h6-N4x" secondAttribute="bottom" id="U2t-gJ-2ki"/>
+                            <constraint firstItem="1wm-h6-N4x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="z7H-in-yuS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bZI-EC-IQX"/>
+                    <connections>
+                        <outlet property="loginScrollView" destination="1wm-h6-N4x" id="Aev-26-DAw"/>
+                        <outlet property="webview" destination="kG6-8v-NBm" id="Dx4-T0-X2Q"/>
+                        <segue destination="crp-qo-rsb" kind="show" identifier="fromLoginToTabBar" id="UQB-tl-a8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-217.39130434782609" y="-4.0178571428571423"/>
+        </scene>
+        <!--Custom Tab Bar Controller-->
+        <scene sceneID="UrX-rE-5rt">
+            <objects>
+                <tabBarController id="crp-qo-rsb" customClass="CustomTabBarController" customModule="openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="c9O-Op-uO0"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bEo-ez-mfT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kUe-q8-Pzw" kind="relationship" relationship="viewControllers" id="RAE-sB-pzO"/>
+                        <segue destination="xTX-Db-rI5" kind="relationship" relationship="viewControllers" id="CN3-HL-p71"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3E-yT-czM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="-4"/>
+        </scene>
+        <!--Друзья-->
+        <scene sceneID="mS4-AP-DYq">
+            <objects>
+                <tableViewController id="C2k-68-bA9" customClass="UsersTableViewController" customModule="openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Nja-ft-dyW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zzR-uO-wrd">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zzR-uO-wrd" id="ett-RD-77Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="C2k-68-bA9" id="clg-mJ-zxA"/>
+                            <outlet property="delegate" destination="C2k-68-bA9" id="31c-on-p8O"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Друзья" id="SKZ-Uo-NKC"/>
+                    <connections>
+                        <segue destination="T0p-9f-hwp" kind="show" identifier="fromFriendsToFoto" id="lba-FG-atK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1s-wA-ldP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2686" y="376"/>
+        </scene>
+        <!--Друзья-->
+        <scene sceneID="XGu-6R-hk4">
+            <objects>
+                <navigationController id="xTX-Db-rI5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Друзья" image="person.fill" catalog="system" id="cSN-cc-Oux"/>
+                    <navigationItem key="navigationItem" id="hxG-yg-a6A"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jaj-T6-uDO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="C2k-68-bA9" kind="relationship" relationship="rootViewController" id="FuN-ef-Z73"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3au-DU-dJX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="376"/>
+        </scene>
+        <!--мои группы-->
+        <scene sceneID="P6m-Zs-fgQ">
+            <objects>
+                <tableViewController id="w7L-nY-4BT" customClass="MyGroupTableViewController" customModule="openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AMa-pD-Y4e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NBp-kT-TSk">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NBp-kT-TSk" id="ZM2-Lq-Dt5">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="w7L-nY-4BT" id="O08-RW-cwa"/>
+                            <outlet property="delegate" destination="w7L-nY-4BT" id="jLP-r9-62J"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="мои группы" id="cdb-Xu-hxJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ihP-ns-oKJ">
+                            <connections>
+                                <segue destination="oAE-97-5Q4" kind="show" id="wOH-HE-oRp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zda-dg-n4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2651" y="-599"/>
+        </scene>
+        <!--Все группы-->
+        <scene sceneID="vAb-Ts-YXp">
+            <objects>
+                <tableViewController id="oAE-97-5Q4" customClass="AllGroupTableViewController" customModule="openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KoP-gI-N54">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="G0V-CB-nQX">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G0V-CB-nQX" id="37Y-Bx-7ju">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oAE-97-5Q4" id="MOY-Xf-fZK"/>
+                            <outlet property="delegate" destination="oAE-97-5Q4" id="U7U-KZ-vrx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Все группы" id="gyh-Tb-LgD"/>
+                    <connections>
+                        <segue destination="Vcw-Pd-ORa" kind="unwind" identifier="allGroupToMyGroup" unwindAction="unwindToMyGroupWithSegue:sender:" id="EnB-GL-62V"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fMo-er-f3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Vcw-Pd-ORa" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3532" y="-599"/>
+        </scene>
+        <!--Группы-->
+        <scene sceneID="dUg-s6-kCh">
+            <objects>
+                <navigationController id="kUe-q8-Pzw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Группы" image="character.book.closed.fill.zh" catalog="system" id="6Dz-dU-KyD"/>
+                    <navigationItem key="navigationItem" id="cuz-tN-RBp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GwJ-nF-hQc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="w7L-nY-4BT" kind="relationship" relationship="rootViewController" id="82Y-Cv-N8c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEo-I3-Oou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="-599"/>
+        </scene>
+        <!--Foto Collection View Controller-->
+        <scene sceneID="qIR-1N-Bab">
+            <objects>
+                <collectionViewController id="T0p-9f-hwp" customClass="FotoCollectionViewController" customModule="openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceHorizontal="YES" dataMode="prototypes" id="XKh-8Y-9gp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dmo-7J-nfp">
+                            <size key="itemSize" width="408" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <scrollView key="backgroundView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="kzq-QM-xlz">
+                            <rect key="frame" x="0.0" y="-56" width="414" height="842"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <viewLayoutGuide key="contentLayoutGuide" id="EpO-aK-uXm"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="DNY-EN-I4N"/>
+                        </scrollView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pbc-GO-sPd">
+                                <rect key="frame" x="3" y="0.0" width="408" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vk7-OJ-0Li">
+                                    <rect key="frame" x="0.0" y="0.0" width="408" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="408" height="128"/>
+                                <connections>
+                                    <segue destination="zfb-3A-Rb3" kind="show" id="X6i-JN-rpL"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="T0p-9f-hwp" id="yBz-Us-5yE"/>
+                            <outlet property="delegate" destination="T0p-9f-hwp" id="CY4-H2-TbE"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="JQC-3P-1NA"/>
+                    <connections>
+                        <outlet property="collectionViewWidth" destination="XKh-8Y-9gp" id="Nsa-5c-7qk"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaq-sQ-Bll" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3763.7681159420295" y="375.66964285714283"/>
+        </scene>
+        <!--Gallery Controller-->
+        <scene sceneID="G6X-zL-HDJ">
+            <objects>
+                <viewController id="zfb-3A-Rb3" customClass="galleryController" customModule="openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1k9-zd-Zw4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kn-Qe-jv3" customClass="GalleryHorisontalView" customModule="openWeatherMap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="56" width="611" height="373"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4jg-ZM-jSi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3kn-Qe-jv3" firstAttribute="top" secondItem="4jg-ZM-jSi" secondAttribute="top" id="6GQ-8V-sos"/>
+                            <constraint firstItem="4jg-ZM-jSi" firstAttribute="bottom" secondItem="3kn-Qe-jv3" secondAttribute="bottom" constant="330" id="XJO-S0-gpP"/>
+                            <constraint firstItem="3kn-Qe-jv3" firstAttribute="leading" secondItem="4jg-ZM-jSi" secondAttribute="leading" id="Xd3-Gb-ARA"/>
+                            <constraint firstAttribute="trailing" secondItem="3kn-Qe-jv3" secondAttribute="trailing" constant="-197" id="lM7-iI-yrB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kVJ-qE-aS1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9y-A9-B2i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4718.840579710145" y="379.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="character.book.closed.fill.zh" catalog="system" width="115" height="128"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
