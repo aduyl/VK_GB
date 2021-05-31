@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import WebKit
+import Foundation
+
+
 
 class ViewController: UIViewController {
 
@@ -17,11 +21,27 @@ class ViewController: UIViewController {
    
     
     
+    @IBOutlet weak var webview: WKWebView!
     
     
     let fromLoginToTableSegue = "fromLoginToTabBar"
     
-    
+    var urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "oauth.vk.com"
+            urlComponents.path = "/authorize"
+            urlComponents.queryItems = [
+                URLQueryItem(name: "client_id", value: "1234567"),
+                URLQueryItem(name: "display", value: "mobile"),
+                URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
+                URLQueryItem(name: "scope", value: "262150"),
+                URLQueryItem(name: "response_type", value: "token"),
+                URLQueryItem(name: "v", value: "5.68")
+            ]
+            
+            let request = URLRequest(url: urlComponents.url!)
+            
+            webview.load(request)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,22 +96,6 @@ class ViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    
-    
-    @IBAction func pressLoginButton(_ sender: Any) {
-        //        guard let login = self.loginInput.text,
-        //              let password = self.passwordInput.text,
-        //              login == "admin",
-        //              password == "123456"
-        //        else {
-        //            showAlert(alertText: "Wrong login or password")
-        //            return
-        //        }
-             
-                performSegue(withIdentifier: self.fromLoginToTableSegue, sender: self)
-    }
-
-
 
 
 }

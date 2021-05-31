@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -20,74 +20,24 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="scrollableAxes" translatesAutoresizingMaskIntoConstraints="NO" id="1wm-h6-N4x">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-QS-YXI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk" translatesAutoresizingMaskIntoConstraints="NO" id="Ijt-sM-bba">
-                                                <rect key="frame" x="157" y="40" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="TYc-GC-u9B"/>
-                                                    <constraint firstAttribute="width" constant="100" id="jRZ-Vy-Ngu"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-13-K8S">
-                                                <rect key="frame" x="186" y="180" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tTP-lP-hFv">
-                                                <rect key="frame" x="50" y="221" width="314" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy2-oS-hv1">
-                                                <rect key="frame" x="170" y="275" width="74" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJ7-SD-9xG">
-                                                <rect key="frame" x="50" y="316" width="314" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-K7-vMA">
-                                                <rect key="frame" x="188" y="370" width="38" height="30"/>
-                                                <state key="normal" title="Login"/>
-                                                <connections>
-                                                    <action selector="pressLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHi-Ex-UFM"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-8v-NBm">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="810"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="zJ7-SD-9xG" secondAttribute="trailing" constant="50" id="73A-TH-jnF"/>
-                                            <constraint firstItem="zJ7-SD-9xG" firstAttribute="centerX" secondItem="aTh-QS-YXI" secondAttribute="centerX" id="CN2-lR-UAA"/>
-                                            <constraint firstAttribute="trailing" secondItem="tTP-lP-hFv" secondAttribute="trailing" constant="50" id="Eck-pi-Ne6"/>
-                                            <constraint firstItem="XDd-K7-vMA" firstAttribute="top" secondItem="zJ7-SD-9xG" secondAttribute="bottom" constant="20" id="HbP-7F-3Wr"/>
-                                            <constraint firstItem="hgO-13-K8S" firstAttribute="centerX" secondItem="aTh-QS-YXI" secondAttribute="centerX" id="LA4-VO-0e6"/>
-                                            <constraint firstItem="hgO-13-K8S" firstAttribute="top" secondItem="Ijt-sM-bba" secondAttribute="bottom" constant="40" id="Lki-aZ-wmh"/>
-                                            <constraint firstItem="zJ7-SD-9xG" firstAttribute="top" secondItem="zy2-oS-hv1" secondAttribute="bottom" constant="20" id="Qai-Vv-gmr"/>
-                                            <constraint firstItem="tTP-lP-hFv" firstAttribute="top" secondItem="hgO-13-K8S" secondAttribute="bottom" constant="20" id="RbW-F5-7KF"/>
-                                            <constraint firstItem="tTP-lP-hFv" firstAttribute="leading" secondItem="aTh-QS-YXI" secondAttribute="leading" constant="50" id="Xfb-pJ-Bsr"/>
-                                            <constraint firstItem="zy2-oS-hv1" firstAttribute="top" secondItem="tTP-lP-hFv" secondAttribute="bottom" constant="20" id="ZfI-Z0-naK"/>
-                                            <constraint firstItem="zJ7-SD-9xG" firstAttribute="leading" secondItem="aTh-QS-YXI" secondAttribute="leading" constant="50" id="aHo-lO-h2j"/>
-                                            <constraint firstItem="Ijt-sM-bba" firstAttribute="top" secondItem="aTh-QS-YXI" secondAttribute="top" constant="40" id="bca-5I-yzU"/>
-                                            <constraint firstItem="Ijt-sM-bba" firstAttribute="centerX" secondItem="aTh-QS-YXI" secondAttribute="centerX" id="jem-KH-awr"/>
-                                            <constraint firstItem="XDd-K7-vMA" firstAttribute="centerX" secondItem="aTh-QS-YXI" secondAttribute="centerX" id="loA-m2-J7C"/>
-                                            <constraint firstItem="tTP-lP-hFv" firstAttribute="centerX" secondItem="aTh-QS-YXI" secondAttribute="centerX" id="mDy-nh-rm0"/>
-                                            <constraint firstItem="zy2-oS-hv1" firstAttribute="centerX" secondItem="aTh-QS-YXI" secondAttribute="centerX" id="uEq-98-DDf"/>
+                                            <constraint firstAttribute="height" constant="810" id="o1u-gT-3Kd"/>
                                         </constraints>
-                                    </view>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="aTh-QS-YXI" firstAttribute="top" secondItem="1wm-h6-N4x" secondAttribute="top" id="CAK-Qd-ga4"/>
-                                    <constraint firstItem="aTh-QS-YXI" firstAttribute="centerY" secondItem="1wm-h6-N4x" secondAttribute="centerY" id="OrQ-yt-ggX"/>
-                                    <constraint firstAttribute="trailing" secondItem="aTh-QS-YXI" secondAttribute="trailing" id="YR7-jZ-cgw"/>
-                                    <constraint firstItem="aTh-QS-YXI" firstAttribute="leading" secondItem="1wm-h6-N4x" secondAttribute="leading" id="adO-TV-7cP"/>
-                                    <constraint firstItem="aTh-QS-YXI" firstAttribute="centerX" secondItem="1wm-h6-N4x" secondAttribute="centerX" id="mtH-vr-8Sh"/>
-                                    <constraint firstAttribute="bottom" secondItem="aTh-QS-YXI" secondAttribute="bottom" id="rry-he-bAy"/>
+                                    <constraint firstAttribute="trailing" secondItem="kG6-8v-NBm" secondAttribute="trailing" id="5zs-mB-uTb"/>
+                                    <constraint firstItem="kG6-8v-NBm" firstAttribute="top" secondItem="1wm-h6-N4x" secondAttribute="top" id="F7t-0W-LCG"/>
+                                    <constraint firstItem="kG6-8v-NBm" firstAttribute="centerX" secondItem="1wm-h6-N4x" secondAttribute="centerX" id="WE3-eb-JvM"/>
+                                    <constraint firstItem="kG6-8v-NBm" firstAttribute="leading" secondItem="1wm-h6-N4x" secondAttribute="leading" id="e6h-LX-l2q"/>
+                                    <constraint firstAttribute="bottom" secondItem="kG6-8v-NBm" secondAttribute="bottom" id="jea-YX-d5N"/>
                                 </constraints>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                             </scrollView>
@@ -103,9 +53,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="bZI-EC-IQX"/>
                     <connections>
-                        <outlet property="loginInput" destination="tTP-lP-hFv" id="FQ6-Xg-DlX"/>
                         <outlet property="loginScrollView" destination="1wm-h6-N4x" id="Aev-26-DAw"/>
-                        <outlet property="passwordInput" destination="zJ7-SD-9xG" id="MZt-NL-ifj"/>
+                        <outlet property="webview" destination="kG6-8v-NBm" id="Dx4-T0-X2Q"/>
                         <segue destination="crp-qo-rsb" kind="show" identifier="fromLoginToTabBar" id="UQB-tl-a8f"/>
                     </connections>
                 </viewController>
@@ -142,7 +91,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zzR-uO-wrd">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zzR-uO-wrd" id="ett-RD-77Y">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -193,7 +142,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NBp-kT-TSk">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NBp-kT-TSk" id="ZM2-Lq-Dt5">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -228,7 +177,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="G0V-CB-nQX">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G0V-CB-nQX" id="37Y-Bx-7ju">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -349,7 +298,6 @@
     <resources>
         <image name="character.book.closed.fill.zh" catalog="system" width="115" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="vk" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
